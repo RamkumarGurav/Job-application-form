@@ -1,0 +1,252 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-weight: 400;
+}
+
+/* -------------------navbar------------------ */
+
+#header {
+  padding: 10px 5%;
+}
+
+.headerlogo {
+  width: 250px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 10px 20px;
+}
+
+.sidemenu li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: #ff004f;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.2s ease-in-out;
+}
+nav ul li a:hover::after {
+  width: 100%;
+  text-decoration: none;
+  color: white;
+  transition: 0.2s ease-in-out;
+}
+
+nav .fa-solid {
+  display: none;
+}
+
+/* nav .sidemenu li a{
+    text-decoration: none;
+    color: white;
+} */
+@media only screen and (max-width: 900px) {
+  .headerlogo {
+    width: 170px;
+  }
+  nav .fa-solid {
+    display: block;
+    font-size: 25px;
+  }
+  nav ul {
+    background-color: #ff004f;
+
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition: right 0.5s;
+  }
+  nav ul li {
+    display: block;
+    text-align: left;
+    margin: 25px;
+  }
+
+  nav .fa-solid {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+  }
+}
+
+/* -----------------------------------------job application------------------------- */
+
+.apply_container {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.apply_container h1 {
+  margin-bottom: 10px;
+}
+
+.form_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.textarea_control {
+  grid-column: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 484px) {
+  .textarea_control {
+    grid-column: 1 / span 1;
+  }
+}
+.form_control {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  padding: 5px 15px;
+  border: 0.8px solid #ccc;
+}
+
+.button_container {
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+}
+
+textarea,
+input:focus {
+  outline-color: red;
+}
+
+/* -----------------------------footer------------------- */
+footer {
+  padding: 30px 0 0 0;
+  margin: 0;
+  margin-top: 150px;
+  background-color: black;
+  /* background-image: url(images/footerBackImgUchihaBW.jpg); */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #dddddd;
+  text-align: center;
+}
+
+.footerlogo {
+  width: 40px;
+  opacity: 0.7;
+  margin-bottom: 5px;
+}
+footer .footersocial {
+  text-align: center;
+
+  padding-bottom: 7px;
+  color: rgb(194, 191, 191);
+}
+
+footer .footersocial a {
+  font-size: 1.2rem;
+  color: inherit;
+  border: 2px solid #151515;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  line-height: 38px;
+  display: inline-block;
+  text-align: center;
+  opacity: 0.7;
+  margin: 2px 5px;
+}
+.footerlogo:hover {
+  border-radius: 50%;
+  animation: spin 2s infinite;
+  opacity: 1;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+footer .footersocial a:hover {
+  opacity: 1;
+}
+
+footer .footersocial a:hover {
+  box-shadow: 0 0 15px #817c7d;
+  text-decoration: none;
+}
+footer .copyright {
+padding: 10px;
+
+  font-size: 15px;
+  background: #202020;
+  letter-spacing: 1px;
+  text-align: center;
+
+  color: inherit;
+  opacity: 0.7;
+
+}
+
+.copyrightdiV {
+   
+  text-align: center;
+}
+
+@media screen and (max-width: 320px) {
+  .footerSol {
+    min-width: 320px;
+  }
+}
